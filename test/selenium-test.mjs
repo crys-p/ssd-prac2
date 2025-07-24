@@ -36,4 +36,7 @@ async function runTest(moduleValue, expectedMsg, feedbackValue) {
 (async () => {
   await runTest('SSD', 'Ding ding! SSD is better!', 'Automated feedback for SSD');
   await runTest('ITP', 'Boooo! ITP is the worst!', 'Automated feedback for ITP');
-})();
+})().catch(e => {
+  console.error('Test failed:', e);
+  process.exit(1);
+});

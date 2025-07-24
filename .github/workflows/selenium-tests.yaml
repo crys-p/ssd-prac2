@@ -75,7 +75,7 @@ jobs:
           echo "Files in the current directory:"
           ls -ltra .
           echo "Files in the tests directory:"
-          ls -ltra tests/
+          ls -ltra test/
 
       - name: Start Node.js server
         run: |
@@ -93,4 +93,4 @@ jobs:
           done
 
       - name: Run Selenium tests
-        run: node tests/selenium-test.mjs github
+        run: node test/selenium-test.mjs github
