@@ -13,5 +13,9 @@
   "main": "server.js",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^5.2.1",
+    "selenium-webdriver": "^4.34.0"
+  }
 }

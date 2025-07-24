@@ -14,17 +14,23 @@ app.get('/', (req, res) => {
   res.render('survey');
 });
 
+function getModuleMessage(module) {
+  if (module === "SSD") {
+    return "Ding ding! SSD is better!";
+  } else {
+    return "Boooo! ITP is the worst!";
+  }
+}
+
 app.post('/submit', (req, res) => {
   const { module, feedback } = req.body;
-  let msg
-  if (module == "SSD") {
-    msg = "Ding ding! SSD is better!"
-  } else {
-    msg = "Boooo! ITP is the worst!"
-  }
+  const msg = getModuleMessage(module);
   res.render('thankyou', { module, feedback, msg });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+let server;
+server = app.listen(PORT, () => {
+    // console.log(`Server running on http://localhost:${PORT}`);
 });
+
+module.exports = { server, getModuleMessage };
