@@ -6,7 +6,7 @@ const { server, getModuleMessage } = require('../server.js');
 
 describe('getModuleMessage', function() {
   it('should return SSD message for SSD', function() {
-    expect(getModuleMessage('SSD')).to.equal('Ding ding! SSD is better!');
+    expect(getModuleMessage('SSD')).to.equal('Ding ding! SSD is beter!');
   });
   it('should return ITP message for ITP', function() {
     expect(getModuleMessage('ITP')).to.equal('Boooo! ITP is the worst!');
